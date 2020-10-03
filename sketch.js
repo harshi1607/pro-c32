@@ -2,11 +2,12 @@
 var block1,block2,block3,block4,block5,block6,block7,block8,
     block9,block10,block11,block12,block13,block14,block15,
     stand,polygon,polygonImg,backgroundImg;
-    var score=0
+    
 const Engine = Matter.Engine
 const World = Matter.World
 const Bodies = Matter.Bodies  
 const Constraint = Matter.Constraint
+var score = 0;
 
 function preload(){
   getTime()
@@ -16,7 +17,6 @@ function setup() {
   createCanvas(800,400);
   engine= Engine.create();
   world= engine.world;
-  text("score:"+score,400,150)
   polygon= new Polygon(50,200,100)
   //polygon.addImage("download",polygonImg)
   stand= new Stand(390,300,400,20)
@@ -43,6 +43,11 @@ function setup() {
 function draw() {
   if(backgroundImg){
     background(backgroundImg);
+    noStroke();
+    textSize(35)
+    fill("white")
+    text("SCORE:" + score,600,100)
+
 }
   Engine.update(engine);
   stand.display();
@@ -65,21 +70,21 @@ function draw() {
   slingshot.display();
 
 
-  block1.score();
-  block2.score();
-  block3.score();
-  block4.score();
-  block5.score();
-  block6.score();
-  block7.score();
-  block8.score();
-  block9.score();
-  block10.score();
-  block11.score();
-  block12.score();
-  block13.score();
-  block14.score();
-  block15.score();
+  block1.getscore();
+  block2.getscore();
+  block3.getscore();
+  block4.getscore();
+  block5.getscore();
+  block6.getscore();
+  block7.getscore();
+  block8.getscore();
+  block9.getscore();
+  block10.getscore();
+  block11.getscore();
+  block12.getscore();
+  block13.getscore();
+  block14.getscore();
+  block15.getscore();
   drawSprites();
 }
 function mouseDragged(){

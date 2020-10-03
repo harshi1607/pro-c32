@@ -8,12 +8,12 @@ class Box{
         this.body = Bodies.rectangle(x, y, width, height, options);
         this.width = width;
         this.height = height;
-        this.visibility=255;
+        this.Visibility=255;
         this.image=loadImage("wood1.png")
         World.add(world, this.body);
       }
       display(){  
-console.log(this.body.speed)
+        console.log(this.Visibility)
       if(this.body.speed<3){
         push();
         var pos =this.body.position;
@@ -28,19 +28,21 @@ console.log(this.body.speed)
       else{
         World.remove(world,this.body)
         push();
-        this.visibility=this.visibility-5
-        tint(255,this.visibility)
+        this.Visibility=this.Visibility-5
+        tint(255,this.Visibility)
         image(this.image,this.body.position.x,this.body.position.y,50,50);
         pop();
 
       }
     }
 
-score(){
-  if(this.visibility<0 && this.visibility>=105){
+getscore(){
+  
+  if(this.Visibility<0 && this.Visibility>-500){
     score++;
   }
 }
+
 }
 //var pos =this.body.position;
        // push()
